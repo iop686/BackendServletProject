@@ -9,6 +9,12 @@
 <body>
 	<%@ include file="top.jsp" %>
 
+<% 
+	String lo = (String) application.getAttribute("login.jsp")
+	if(lo==null){
+		//로그인 안함
+	
+%>
 	<h1>로그인</h1>
 
 	<form action="loginOk.jsp" method="post">
@@ -20,5 +26,18 @@
 		<input type="radio" name="gender" value="남">남
 		<input type="radio" name="gender" value="여">여
 	</form>
+<%
+	}else {
+		//성공
+%>
+	<h1> 님, 환영합니다.
+		<form action="" method="">
+			<input type="submit" value="로그아웃">
+		</form>
+	</h1>
+<%
+	}
+%>
+
 </body>
 </html>
